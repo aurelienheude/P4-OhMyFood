@@ -1,16 +1,25 @@
-//Primary Sass file
-@use "base/typography";
+@import "base/typography";
 
-@use "components/buttons";
-@use "components/cards";
-@use "components/navigation";
+@import "utils/placeholder";
+@import "utils/variables";
 
-@use "layout/footer";
-@use "layout/header";
-@use "layout/ordermenu";
+@import "components/buttons";
+@import "components/cards";
+@import "components/navigation";
 
-@use "pages/home";
-@use "pages/restaurants";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/ordermenu";
 
-@use "utils/placeholder";
-@use "utils/variables";
+@import "pages/home";
+@import "pages/restaurants";
+
+html, body{
+    height: 100vh;
+}
+body{ 
+    margin: 0px; 
+    padding: 0px; 
+
+    background: $white-sd;
+}
