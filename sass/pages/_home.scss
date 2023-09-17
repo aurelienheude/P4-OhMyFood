@@ -1,0 +1,33 @@
+main{
+    
+    padding: 0px 17px 0px 17px;
+
+    .Reservation{
+        display: flex;
+        align-items: center;
+
+        flex-direction: column;
+
+        padding: 39px 0px 57px 0px;
+
+        h1{
+            text-align: center;
+        }
+    
+        p{
+            margin-top: 17px;
+
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 21px;
+            letter-spacing: 0em;
+            text-align: center;
+
+        }
+
+        .btn{
+            margin-top: 27px;
+        }
+    }
+}
