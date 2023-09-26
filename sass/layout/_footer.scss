@@ -1,0 +1,66 @@
+footer{
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+
+    gap: 16px;
+
+    padding: 25px 22px 22px 25px;
+
+    background: $grey;
+    color: $white;
+
+    span{
+        font-family: Shrikhand;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+    }
+
+    ul{
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: column;
+
+        gap: 7px;
+
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        li{
+            display: flex;
+            align-items: baseline;
+
+            gap: 17px;
+
+            font-family: Roboto;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 19px;
+            letter-spacing: 0em;
+
+            &:nth-child(n + 3){
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 375px + 1) {
+    footer{
+        padding: initial 25px 30px initial;
+        align-items: center;
+
+        ul{
+            justify-content: center;
+            
+            li{
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -1,33 +1,107 @@
-main{
-    
-    padding: 0px 17px 0px 17px;
+.reservation {
+    display: flex;
+    align-items: center;
 
-    .Reservation{
+    flex-direction: column;
+
+    padding: 39px 17px 57px 17px;
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        margin-top: 17px;
+
+        font-family: Roboto;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: center;
+
+    }
+
+    .btn {
+        margin-top: 27px;
+    }
+}
+
+.functioning {
+    padding: 48px 17px 68px 17px;
+
+    background: $white;
+
+    ol {
         display: flex;
-        align-items: center;
+        justify-content: stretch;
+        align-items: flex-start;
+        flex-flow: row wrap;
 
-        flex-direction: column;
+        gap: 25px;
 
-        padding: 39px 0px 57px 0px;
+        margin: 0;
+        padding: 26px 0px 0px 12px;
 
-        h1{
-            text-align: center;
-        }
-    
-        p{
-            margin-top: 17px;
+        list-style: none;
+        counter-reset: li;
 
+        li {
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+
+            gap: 27px;
+
+            width: 100%;
+
+            margin: 0;
+            padding: 29px 38px 28px 33px;
+
+            box-shadow: 0px 4px 15px 0px #00000026;
+            border-radius: 20px;
+
+
+            color: #000;
             font-family: Roboto;
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 21px;
-            letter-spacing: 0em;
-            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
 
-        }
+            &::before{
+                counter-increment: li;
+                content: counters(li, ".") "";
 
-        .btn{
-            margin-top: 27px;
+                position: absolute;
+                left: -12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: 24px;
+                width: 24px;
+
+                border-radius: 100%;
+                background: $purple;
+                color: $white;
+            }
         }
+    }
+}
+
+.restaurant{
+    padding: 54px 17px 66px 17px;
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 26px;
+
+    @include breakpoints(mobile){
+        
     }
 }
