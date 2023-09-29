@@ -1,5 +1,11 @@
-@mixin breakpoints($name){
-    @media (min-width: map-get($breakpoints, $name)) {
+@mixin breakpoints($name) {
+    @media only screen and (min-width: map-get($breakpoints, $name)) {
         @content;
     }
+}
+
+@mixin font($family, $weight, $size, $line-height) {
+    font-family: $family;
+    font-weight: $weight;
+    @include font-size($size, $line-height);
 }

@@ -1,21 +1,23 @@
+@use "../utils/variables";
+
 .cards{
     display: flex;
     justify-content: center;
-    flex-flow: row wrap;
+    flex-flow: wrap;
 
     gap: 18px;
 
     width: 100%;
 
-    padding: inherit auto;
-
     .card{
-        width: 100%;
+        box-sizing: border-box;
+        flex-basis: 100%;
         max-width: 490px;
 
         border-radius: 15px;
 
-        background: $white;
+        background: color("blue");
+        box-sizing: border-box;
 
         &__img{
             width: 100%;
@@ -77,6 +79,18 @@
                 }
             }
 
+            
+        }
+
+        @include breakpoints(mobile){
+    
+        }
+    
+        @include breakpoints(tablet){
+        
+        }
+    
+        @include breakpoints(desktop){
             
         }
     }
