@@ -55,7 +55,7 @@
 
             gap: 27px;
 
-            width: 100%;
+            flex-basis: 100%;
 
             margin: 0;
             padding: 29px 38px 28px 33px;
@@ -90,6 +90,18 @@
             }
         }
     }
+
+    @include breakpoints(mobile){
+    
+    }
+    
+    @include breakpoints(tablet){
+        padding: 60px 180px 50px 180px;
+    }
+
+    @include breakpoints(desktop){
+
+    }
 }
 
 .restaurant{
@@ -102,6 +114,14 @@
     gap: 26px;
 
     @include breakpoints(mobile){
+    
+    }
+
+    @include breakpoints(tablet){
+        padding: 30px 180px;
+    }
+
+    @include breakpoints(desktop){
         
     }
 }
