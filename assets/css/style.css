@@ -52,17 +52,17 @@ a :visited {
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
-  flex-flow: wrap;
-  gap: 18px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-row-gap: 18px;
   width: 100%;
 }
 .cards .card {
   position: relative;
   box-sizing: border-box;
-  flex-basis: 100%;
-  max-width: 490px;
   border-radius: 15px;
   background: #FFFFFF;
 }
@@ -128,6 +128,21 @@ a :visited {
 }
 .cards .card:hover span {
   text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 25px;
+    grid-column-gap: 50px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cards {
+    grid-column: 1;
+    grid-row: 2/3;
+    grid-row-gap: 50px;
+    grid-column-gap: 100px;
+  }
 }
 
 nav {
@@ -257,7 +272,6 @@ header p {
 }
 .functioning ol {
   display: flex;
-  justify-content: stretch;
   align-items: flex-start;
   flex-flow: row wrap;
   gap: 25px;
@@ -269,12 +283,11 @@ header p {
 .functioning ol li {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 27px;
+  align-items: center;
+  gap: 20px;
   flex-basis: 100%;
   margin: 0;
-  padding: 29px 38px 28px 33px;
+  padding: 29px 38px 28px 37.5px;
   background: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   border-radius: 20px;
@@ -303,13 +316,40 @@ header p {
   background: #9356DC;
   color: #FFFFFF;
 }
+@media only screen and (min-width: 1024px) {
+  .functioning {
+    padding: 50px 12.5%;
+  }
+  .functioning ol {
+    padding: 26px 27px 0px 12px;
+  }
+  .functioning ol li {
+    padding: 29px 38px 28px 33.5px;
+    flex-basis: 21.1433%;
+    flex-grow: 1;
+  }
+}
 
 .restaurant {
-  padding: 54px 17px 66px 17px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 26px;
+  display: grid;
+  grid-template-columns: 17px 1fr 17px;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 26px;
+  padding-top: 54px;
+  padding-bottom: 66px;
+}
+.restaurant h2 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+@media only screen and (min-width: 1024px) {
+  .restaurant {
+    grid-template-columns: 1fr;
+    padding: 30px 12.5%;
+  }
+  .restaurant h2 {
+    grid-column: 1/2;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

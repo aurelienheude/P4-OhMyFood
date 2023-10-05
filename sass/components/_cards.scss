@@ -1,11 +1,14 @@
 @use "../utils" as *;
 
 .cards{
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
+    grid-column: 2/3;
+    grid-row: 2/3;
 
-    gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    grid-row-gap: 18px;
 
     width: 100%;
 
@@ -13,9 +16,6 @@
         position: relative;
 
         box-sizing: border-box;
-        flex-basis: 100%;
-        max-width: 490px;
-
         border-radius: 15px;
 
         background: color(white);
@@ -93,5 +93,19 @@
         &:hover span{
             text-decoration: underline;
         }
+    }
+
+    @include breakpoints(tablet){
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 25px;
+        grid-column-gap: 50px;
+    }
+
+    @include breakpoints(desktop){
+        grid-column: 1;
+        grid-row: 2/3;
+
+        grid-row-gap: 50px;
+        grid-column-gap: 100px;
     }
 }
