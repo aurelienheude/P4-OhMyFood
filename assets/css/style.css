@@ -23,17 +23,11 @@ h1, h2 {
   color: #000;
 }
 
-.Title {
-  font-family: Shrikhand;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 44px;
-  letter-spacing: 0em;
-}
-
 a {
   color: #FFFFFF;
+  text-decoration: none;
+}
+a :visited {
   text-decoration: none;
 }
 
@@ -104,23 +98,22 @@ a {
   gap: 5px;
   padding: 16px 25px 16px 13px;
 }
-.cards .card__content a {
-  color: black;
-  font-family: Roboto;
+.cards .card__content span {
+  font-family: "roboto";
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  line-height: 21.09px;
+  color: #000;
 }
 .cards .card__content p {
-  color: black;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 17px;
-  font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  line-height: 19.92px;
+  color: #000;
 }
 .cards .card__content svg {
+  z-index: 2;
   position: absolute;
   align-self: flex-end;
   height: 24px;
@@ -132,6 +125,9 @@ a {
 }
 .cards .card__content svg > *:hover {
   fill: purple;
+}
+.cards .card:hover span {
+  text-decoration: underline;
 }
 
 nav {
@@ -185,6 +181,35 @@ footer ul li {
 footer ul li:nth-child(n+3) {
   font-weight: 400;
 }
+@media only screen and (min-width: 768px) {
+  footer {
+    align-items: center;
+    padding: 25px 22px;
+  }
+  footer ul li {
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  footer {
+    flex-flow: row-reverse;
+    align-items: baseline;
+    padding: 64px 115px 30px 0px;
+    gap: 90px;
+  }
+  footer ul {
+    flex-flow: row;
+  }
+  footer ul li {
+    gap: 10px;
+  }
+  footer ul li:nth-of-type(2) {
+    padding-right: 45px;
+  }
+  footer ul li:nth-of-type(3) {
+    padding-right: 10px;
+  }
+}
 
 header {
   display: flex;
@@ -198,11 +223,11 @@ header p {
   gap: 17px;
   padding: 15px 0px 15px 0px;
   width: 100%;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
+  line-height: 19.92px;
+  color: #353535;
   background: #EAEAEA;
 }
 

@@ -59,25 +59,16 @@
             
             padding: 16px 25px 16px 13px;
 
-            a{
-                color: black;
-                font-family: Roboto;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
+            span{
+                @include typography(roboto, medium, bold, largeTextLH, dark);
             }
 
             p{
-                color: black;
-                font-family: Roboto;
-                font-size: 17px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: normal;
+                @include typography(roboto, extraNormal, light, extraMediumTextLH, dark);
             }
 
             svg{
+                z-index: 2;
                 position: absolute;
                 align-self: flex-end;
 
@@ -97,6 +88,10 @@
             }
 
             
+        }
+
+        &:hover span{
+            text-decoration: underline;
         }
     }
 }

@@ -5,7 +5,6 @@ header{
     flex-direction: column;
 
     background: color(white);
-
     p{
         display: flex;
         justify-content: center;
@@ -17,11 +16,7 @@ header{
 
         width: 100%;
 
-        font-family: Roboto;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 19px;
-        letter-spacing: 0em;
+        @include typography(roboto, normal, medium, extraMediumTextLH, grey);
 
         background: color(grey-sm);
     }
