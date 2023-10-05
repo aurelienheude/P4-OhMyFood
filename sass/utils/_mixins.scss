@@ -1,5 +1,6 @@
 @use "fonts";
 @use "colors";
+@use "breakpoints" as *;
 
 @mixin breakpoints($name) {
     @media only screen and (min-width: map-get($breakpoints, $name)) {
