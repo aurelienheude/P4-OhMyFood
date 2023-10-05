@@ -1,4 +1,4 @@
-@use "../utils/variables";
+@use "../utils" as *;
 
 .cards{
     display: flex;
@@ -10,14 +10,31 @@
     width: 100%;
 
     .card{
+        position: relative;
+
         box-sizing: border-box;
         flex-basis: 100%;
         max-width: 490px;
 
         border-radius: 15px;
 
-        background: color("blue");
-        box-sizing: border-box;
+        background: color(white);
+        
+            &:nth-of-type(1)::before, &:nth-of-type(2)::before{
+                content: "Nouveau";
+                position: absolute;
+                top: 0;
+                right: 0;
+                
+                margin-top: 13px;
+                margin-right: 12px;
+                padding: 7px 9.63px 6px 9px;
+                
+                background: #99E2D0;
+                color: #008766;
+                                
+                @include typography(roboto, extraSmall, normal, smallTextLH, green);
+            }
 
         &__img{
             width: 100%;
@@ -43,7 +60,7 @@
             padding: 16px 25px 16px 13px;
 
             a{
-                color: $dark;
+                color: black;
                 font-family: Roboto;
                 font-size: 18px;
                 font-style: normal;
@@ -52,7 +69,7 @@
             }
 
             p{
-                color: $dark;
+                color: black;
                 font-family: Roboto;
                 font-size: 17px;
                 font-style: normal;
@@ -71,26 +88,14 @@
                 & > *{
                     
                     fill: none;
-                    stroke: $dark;
+                    stroke: black;
 
                     &:hover{
-                        fill: $purple;
+                        fill: purple;
                     }
                 }
             }
 
-            
-        }
-
-        @include breakpoints(mobile){
-    
-        }
-    
-        @include breakpoints(tablet){
-        
-        }
-    
-        @include breakpoints(desktop){
             
         }
     }

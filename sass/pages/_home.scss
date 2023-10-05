@@ -1,3 +1,5 @@
+@use "../utils" as *;
+
 .reservation {
     display: flex;
     align-items: center;
@@ -6,20 +8,13 @@
 
     padding: 39px 17px 57px 17px;
 
-    h1 {
-        text-align: center;
-    }
-
     p {
-        margin-top: 17px;
+        @include typography(roboto, medium, light, largeTextLH, dark);
 
-        font-family: Roboto;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 21px;
-        letter-spacing: 0em;
+        margin-top: 17px;
         text-align: center;
 
+        color: color(grey);
     }
 
     .btn {
@@ -30,7 +25,7 @@
 .functioning {
     padding: 48px 17px 68px 17px;
 
-    background: $white;
+    background: map-get($color, white);
 
     ol {
         display: flex;
@@ -44,6 +39,7 @@
         padding: 26px 0px 0px 12px;
 
         list-style: none;
+        
         counter-reset: li;
 
         li {
@@ -60,23 +56,20 @@
             margin: 0;
             padding: 29px 38px 28px 33px;
 
+            background: color(white-sd); 
             box-shadow: 0px 4px 15px 0px #00000026;
             border-radius: 20px;
 
-
-            color: #000;
-            font-family: Roboto;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
+            @include typography(roboto, normal, medium, mediumTextLH,dark);
 
             &::before{
                 counter-increment: li;
                 content: counters(li, ".") "";
 
                 position: absolute;
+
                 left: -12px;
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -85,22 +78,13 @@
                 width: 24px;
 
                 border-radius: 100%;
-                background: $purple;
-                color: $white;
+
+                @include typography(roboto, extraSmall, medium, smallTextLH, white);
+
+                background: color(purple);
+                color: color(white);
             }
         }
-    }
-
-    @include breakpoints(mobile){
-    
-    }
-    
-    @include breakpoints(tablet){
-        padding: 60px 180px 50px 180px;
-    }
-
-    @include breakpoints(desktop){
-
     }
 }
 
@@ -112,16 +96,4 @@
     flex-direction: column;
 
     gap: 26px;
-
-    @include breakpoints(mobile){
-    
-    }
-
-    @include breakpoints(tablet){
-        padding: 30px 180px;
-    }
-
-    @include breakpoints(desktop){
-        
-    }
 }

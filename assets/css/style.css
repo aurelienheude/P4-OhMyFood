@@ -1,11 +1,26 @@
-h1, h2 {
+* {
   margin: 0;
   padding: 0;
-  font-family: Roboto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: #F6F6F6;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: "roboto";
   font-size: 24px;
   font-weight: 700;
-  line-height: 28px;
-  letter-spacing: 0em;
+  line-height: 28.13px;
+  color: #000;
 }
 
 .Title {
@@ -18,26 +33,19 @@ h1, h2 {
 }
 
 a {
-  margin: 0;
-  padding: 0;
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
-}
-
-p {
-  margin: 0;
-  padding: 0;
 }
 
 .btn {
   display: block;
   padding: 13px 23px 13px 23px;
   border-radius: 25px;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
+  line-height: 18.75px;
+  color: #FFFFFF;
   text-align: center;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   color: #FFFFFF;
@@ -57,11 +65,28 @@ p {
   width: 100%;
 }
 .cards .card {
+  position: relative;
   box-sizing: border-box;
   flex-basis: 100%;
   max-width: 490px;
   border-radius: 15px;
-  box-sizing: border-box;
+  background: #FFFFFF;
+}
+.cards .card:nth-of-type(1)::before, .cards .card:nth-of-type(2)::before {
+  content: "Nouveau";
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 13px;
+  margin-right: 12px;
+  padding: 7px 9.63px 6px 9px;
+  background: #99E2D0;
+  color: #008766;
+  font-family: "roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.41px;
+  color: #008766;
 }
 .cards .card__img {
   width: 100%;
@@ -80,7 +105,7 @@ p {
   padding: 16px 25px 16px 13px;
 }
 .cards .card__content a {
-  color: #000;
+  color: black;
   font-family: Roboto;
   font-size: 18px;
   font-style: normal;
@@ -88,7 +113,7 @@ p {
   line-height: normal;
 }
 .cards .card__content p {
-  color: #000;
+  color: black;
   font-family: Roboto;
   font-size: 17px;
   font-style: normal;
@@ -103,36 +128,40 @@ p {
 }
 .cards .card__content svg > * {
   fill: none;
-  stroke: #000;
+  stroke: black;
 }
 .cards .card__content svg > *:hover {
-  fill: #9356DC;
+  fill: purple;
 }
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 38, 0.15);
+  padding: 0px 17px;
+}
+nav a {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 17px;
+}
+nav a ::before {
+  content: "../../assets/images/";
+}
+nav img {
+  max-height: 36px;
+  padding: 12px 0px 8px 0px;
+}
+
 footer {
   display: flex;
-  align-items: flex-start;
   flex-flow: column;
   gap: 16px;
   padding: 25px 22px 22px 25px;
   background: #353535;
-  color: #FFFFFF;
-  /*@include breakpoints(tablet){
-      flex-flow: row-reverse;
-      justify-content: baseline;
-      align-items: center;
-
-      gap: 90px;
-
-      padding: 64px 50px 30px 0px;
-
-      ul {
-          flex-direction: row;
-
-          li{
-              gap: 11px;
-          }
-      }
-  }*/
 }
 footer ul {
   display: flex;
@@ -147,34 +176,20 @@ footer ul li {
   display: flex;
   align-items: baseline;
   gap: 17px;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 19px;
-  letter-spacing: 0em;
+  line-height: 18.75px;
+  color: #FFFFFF;
 }
 footer ul li:nth-child(n+3) {
   font-weight: 400;
 }
+
 header {
   display: flex;
   flex-direction: column;
-}
-header span {
-  position: relative;
-  text-align: center;
-  width: 100%;
-  padding: 12px 0px 8px 0px;
-}
-header span::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+  background: #FFFFFF;
 }
 header p {
   display: flex;
@@ -191,59 +206,21 @@ header p {
   background: #EAEAEA;
 }
 
-.loader {
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
-}
-.loader svg {
-  z-index: 11;
-}
-.loader svg > * {
-  fill: white;
-}
-.loader::before {
-  content: "";
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  animation: loader 2s ease;
-  border-radius: 50%;
-  border: 6px solid #FFFFFF;
-}
-
-@keyframes loader {
-  0% {
-    transform: rotateY(2rad);
-    opacity: 1;
-  }
-  100% {
-    transform: rotateY(0rad);
-    opacity: 0;
-  }
-}
 .reservation {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 39px 17px 57px 17px;
 }
-.reservation h1 {
-  text-align: center;
-}
 .reservation p {
-  margin-top: 17px;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 18px;
   font-weight: 300;
-  line-height: 21px;
-  letter-spacing: 0em;
+  line-height: 21.09px;
+  color: #000;
+  margin-top: 17px;
   text-align: center;
+  color: #353535;
 }
 .reservation .btn {
   margin-top: 27px;
@@ -273,14 +250,14 @@ header p {
   flex-basis: 100%;
   margin: 0;
   padding: 29px 38px 28px 33px;
+  background: #F6F6F6;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
   border-radius: 20px;
-  color: #000;
-  font-family: Roboto;
+  font-family: "roboto";
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 18.75px;
+  color: #000;
 }
 .functioning ol li::before {
   counter-increment: li;
@@ -293,34 +270,21 @@ header p {
   height: 24px;
   width: 24px;
   border-radius: 100%;
+  font-family: "roboto";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  color: #FFFFFF;
   background: #9356DC;
   color: #FFFFFF;
 }
-@media only screen and (min-width: 768px) {
-  .functioning {
-    padding: 60px 180px 50px 180px;
-  }
-}
+
 .restaurant {
   padding: 54px 17px 66px 17px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 26px;
-}
-@media only screen and (min-width: 768px) {
-  .restaurant {
-    padding: 30px 180px;
-  }
-}
-::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
-  background: #F6F6F6;
 }
 
 /*# sourceMappingURL=style.css.map */
