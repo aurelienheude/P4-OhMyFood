@@ -1,0 +1,14 @@
+@use "../utils" as *;
+
+.container{
+    display: grid;
+    grid-template-columns: 17px 1fr 17px;
+    grid-template-rows: 1fr auto;
+
+
+    position: relative;
+
+    @include breakpoints(desktop){
+        grid-template-columns: minmax(17px, 1fr) minmax(17px, 1080px) minmax(17px, 1fr);
+    }
+}

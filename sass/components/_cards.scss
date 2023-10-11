@@ -32,7 +32,7 @@
                 
                 background: #99E2D0;
                 color: #008766;
-                                
+                
                 @include typography(roboto, extraSmall, normal, smallTextLH, green);
             }
 
@@ -102,7 +102,7 @@
     }
 
     @include breakpoints(desktop){
-        grid-column: 1;
+        
         grid-row: 2/3;
 
         grid-row-gap: 50px;

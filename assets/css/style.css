@@ -19,7 +19,7 @@ h1, h2 {
   font-family: "roboto";
   font-size: 24px;
   font-weight: 700;
-  line-height: 28.13px;
+  line-height: 28px;
   color: #000;
 }
 
@@ -38,7 +38,7 @@ a :visited {
   font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 18.75px;
+  line-height: 18px;
   color: #FFFFFF;
   text-align: center;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
@@ -79,7 +79,7 @@ a :visited {
   font-family: "roboto";
   font-size: 14px;
   font-weight: 400;
-  line-height: 16.41px;
+  line-height: 16px;
   color: #008766;
 }
 .cards .card__img {
@@ -102,14 +102,14 @@ a :visited {
   font-family: "roboto";
   font-size: 18px;
   font-weight: 700;
-  line-height: 21.09px;
+  line-height: 21px;
   color: #000;
 }
 .cards .card__content p {
   font-family: "roboto";
   font-size: 17px;
   font-weight: 300;
-  line-height: 19.92px;
+  line-height: 19px;
   color: #000;
 }
 .cards .card__content svg {
@@ -138,7 +138,6 @@ a :visited {
 }
 @media only screen and (min-width: 1024px) {
   .cards {
-    grid-column: 1;
     grid-row: 2/3;
     grid-row-gap: 50px;
     grid-column-gap: 100px;
@@ -190,7 +189,7 @@ footer ul li {
   font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 18.75px;
+  line-height: 18px;
   color: #FFFFFF;
 }
 footer ul li:nth-child(n+3) {
@@ -241,22 +240,35 @@ header p {
   font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 19.92px;
+  line-height: 19px;
   color: #353535;
   background: #EAEAEA;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 17px 1fr 17px;
+  grid-template-rows: 1fr auto;
+  position: relative;
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: minmax(17px, 1fr) minmax(17px, 1080px) minmax(17px, 1fr);
+  }
+}
+
 .reservation {
+  grid-column: 2/3;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 39px 17px 57px 17px;
+  padding: 39px 0px 57px 0px;
 }
 .reservation p {
   font-family: "roboto";
   font-size: 18px;
   font-weight: 300;
-  line-height: 21.09px;
+  line-height: 21px;
   color: #000;
   margin-top: 17px;
   text-align: center;
@@ -267,7 +279,20 @@ header p {
 }
 
 .functioning {
-  padding: 48px 17px 68px 17px;
+  grid-column: 2/3;
+  padding: 48px 0px 68px 0px;
+  background: #FFFFFF;
+}
+.functioning::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  grid-column: 1/4;
+  grid-row: 2/3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background: #FFFFFF;
 }
 .functioning ol {
@@ -294,7 +319,7 @@ header p {
   font-family: "roboto";
   font-size: 16px;
   font-weight: 500;
-  line-height: 18.75px;
+  line-height: 18px;
   color: #000;
 }
 .functioning ol li::before {
@@ -311,15 +336,12 @@ header p {
   font-family: "roboto";
   font-size: 14px;
   font-weight: 500;
-  line-height: 16.41px;
+  line-height: 16px;
   color: #FFFFFF;
   background: #9356DC;
   color: #FFFFFF;
 }
 @media only screen and (min-width: 1024px) {
-  .functioning {
-    padding: 50px 12.5%;
-  }
   .functioning ol {
     padding: 26px 27px 0px 12px;
   }
@@ -331,24 +353,19 @@ header p {
 }
 
 .restaurant {
-  display: grid;
-  grid-template-columns: 17px 1fr 17px;
-  grid-template-rows: 1fr auto;
-  grid-row-gap: 26px;
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: column;
+  gap: 26px;
   padding-top: 54px;
   padding-bottom: 66px;
 }
-.restaurant h2 {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
 @media only screen and (min-width: 1024px) {
   .restaurant {
-    grid-template-columns: 1fr;
-    padding: 30px 12.5%;
+    padding: 30px 0px;
   }
   .restaurant h2 {
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
 }
 
