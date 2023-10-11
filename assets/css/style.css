@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +30,10 @@ a {
 }
 a :visited {
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
 
 .btn {
@@ -144,19 +149,116 @@ a :visited {
   }
 }
 
+.cardsMenuList {
+  grid-row: auto;
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+.cardsMenuList__title {
+  position: relative;
+  height: 27px;
+  font-family: "roboto";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18px;
+  color: #000;
+  text-transform: uppercase;
+}
+.cardsMenuList__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: #99E2D0;
+}
+.cardsMenuList__content {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+.cardsMenuList__content li {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  gap: 5px;
+  padding: 13.5px 15px;
+  max-width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  border-radius: 15px;
+  min-width: 0;
+  cursor: pointer;
+}
+.cardsMenuList__content li .dishDescription {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  gap: 5px;
+}
+.cardsMenuList__content li .dishDescription .dishTitle {
+  font-family: "roboto";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  color: #000;
+}
+.cardsMenuList__content li .dishDescription .dishInfo {
+  font-family: "roboto";
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #000;
+}
+.cardsMenuList__content li .dishPrice {
+  align-self: flex-end;
+  font-family: "roboto";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 17px;
+  color: #353535;
+}
+.cardsMenuList__content li::after {
+  content: "\f058"; /* Utilisez le code Unicode de l'icône que vous souhaitez afficher */
+  font-family: "Font Awesome 6 Free"; /* Nom de la famille de police de Font Awesome */
+  font-weight: 600; /* Poids de la police (en gras) */
+  font-size: 20px; /* Taille de la police */
+  color: rgba(255, 255, 255, 0);
+  position: relative;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  right: -15px;
+  top: -13.5px;
+  height: calc(100% + 27px);
+  width: 0px;
+  background: #99E2D0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: width 600ms ease, border-bottom-right-radius 100ms ease, color 500ms;
+}
+.cardsMenuList__content li:hover::after {
+  width: 59px;
+  color: white;
+}
+
 nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 38, 0.15);
-  padding: 0px 17px;
 }
 nav a {
   position: absolute;
   display: flex;
   align-items: center;
-  left: 17px;
+  left: 23px;
 }
 nav a ::before {
   content: "../../assets/images/";
@@ -244,6 +346,10 @@ header p {
   color: #353535;
   background: #EAEAEA;
 }
+header .MenuBanner {
+  height: 252px;
+  background-position: center;
+}
 
 .container {
   display: grid;
@@ -253,6 +359,24 @@ header p {
 }
 @media only screen and (min-width: 1024px) {
   .container {
+    grid-template-columns: minmax(17px, 1fr) minmax(17px, 1080px) minmax(17px, 1fr);
+  }
+}
+
+.containerRestaurant {
+  display: grid;
+  grid-template-columns: 17px 1fr 17px;
+  grid-template-rows: 1fr auto;
+  row-gap: 40px;
+  padding: 31px 0px 40px 0px;
+  position: relative;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin-top: -55px;
+  background: #F3F3F3;
+}
+@media only screen and (min-width: 1024px) {
+  .containerRestaurant {
     grid-template-columns: minmax(17px, 1fr) minmax(17px, 1080px) minmax(17px, 1fr);
   }
 }
@@ -367,6 +491,23 @@ header p {
   .restaurant h2 {
     grid-column: 2/3;
   }
+}
+
+.restaurantName {
+  grid-row: 1/2;
+  grid-column: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: first baseline;
+  padding-right: 24px;
+}
+.restaurantName h2 {
+  flex-grow: 1;
+  font-family: "Shrikhand";
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40px;
+  color: #101010;
 }
 
 /*# sourceMappingURL=style.css.map */

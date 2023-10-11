@@ -1,0 +1,17 @@
+@use "../utils" as *;
+
+.restaurantName{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: first baseline;
+
+    padding-right: 24px;
+
+    h2{
+        flex-grow: 1;
+        @include typography(shrikhand, title, normal, bigMenuTitleLH, dark-sm);
+    }
+}
