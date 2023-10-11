@@ -9,15 +9,13 @@ nav{
 
     box-shadow: 0px 2px 4px 0px rgba(#000026, 0.15);
 
-    padding: 0px 17px;
-
     a{
         position: absolute;
         
         display: flex;
         align-items: center;
 
-        left: 17px;
+        left: 23px;
 
         ::before{
             content: "../../assets/images/";
