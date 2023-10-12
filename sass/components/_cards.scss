@@ -153,7 +153,7 @@
             gap: 5px;
 
             padding: 13.5px 15px;
-            max-width: 100%;
+            width: 100%;
             box-sizing: border-box;
             box-shadow: 0px 4px 15px 0px #0000001A;
             border-radius: 15px;
@@ -166,18 +166,24 @@
 
                 flex-grow: 1;
                 gap: 5px;
-                
+                min-width: 0;
                 .dishTitle{
+                    white-space: nowrap; /* Empêche le saut à la ligne du texte */
+                    overflow: hidden; /* Cache le texte qui déborde */
+                    text-overflow: ellipsis;
                     @include typography(roboto, medium, medium, largeTextLH, dark);
                 }
                 .dishInfo {
+                    white-space: nowrap; /* Empêche le saut à la ligne du texte */
+                    overflow: hidden; /* Cache le texte qui déborde */
+                    text-overflow: ellipsis;
                     @include typography(roboto, small, light, normalTextLH, dark);
                 }
             }
 
             .dishPrice{
                 align-self: flex-end;
-
+                min-width: 0;
                 @include typography(roboto, small, bold, normalTextLH, grey);
             }
 
@@ -189,7 +195,7 @@
                 color: rgba(color(white), 0);
 
                 position: relative;
-                float: left;
+                
                 display: flex;
                 align-items: center;
                 justify-content: center;
