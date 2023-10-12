@@ -15,3 +15,8 @@
         @include typography(shrikhand, title, normal, bigMenuTitleLH, dark-sm);
     }
 }
+
+.btn{
+    grid-column: 2 / 3;
+    justify-self: center;
+}

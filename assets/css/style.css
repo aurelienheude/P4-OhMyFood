@@ -510,4 +510,9 @@ header .MenuBanner {
   color: #101010;
 }
 
+.btn {
+  grid-column: 2/3;
+  justify-self: center;
+}
+
 /*# sourceMappingURL=style.css.map */
