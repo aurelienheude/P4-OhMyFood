@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 17px 1fr 17px;
     grid-template-rows: 1fr auto;
+
     position: relative;
 
     @include breakpoints(desktop){
@@ -13,23 +14,47 @@
 
 .containerRestaurant{
     display: grid;
-    grid-template-columns: 17px 1fr 17px;
+    grid-template-columns: 1fr minmax(17px, 1fr) minmax(auto, 634px) minmax(17px, 1fr) 1fr;
     grid-template-rows: 1fr auto;
+
+    position: relative;
+    z-index: 1;
 
     row-gap: 40px;
 
+    margin-top: -50px;
     padding: 31px 0px 40px 0px;
 
-    position: relative;
-    
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
+    border-radius: 40px 40px 0px 0px;
+    background: color(white-sd);
 
-    margin-top: -55px;
 
-    background: color(white-sm);
+    @include breakpoints(tablet){
 
-    @include breakpoints(desktop){
-        grid-template-columns: minmax(17px, 1fr) minmax(17px, 1080px) minmax(17px, 1fr);
+        padding: 0px 0px 40px 0px;
+
+        grid-template-columns: minmax(17px, 1fr) minmax(17px, 211px) minmax(auto, 634px) minmax(17px, 211px) minmax(17px, 1fr);
+
+        border-radius: inherit;
+        background: color(white);
+    &::before{
+
+        grid-column: 2/5;
+
+        content: "";
+        position: absolute;
+        z-index: -1;
+        
+        top: 0;
+        left: 0;
+
+        margin-top: -50px;
+
+        width: 100%;
+        height: calc(100% + 50px);
+
+        background: color(white-sd);
+        border-radius: 40px 40px 0px 0px;
+    }
     }
 }

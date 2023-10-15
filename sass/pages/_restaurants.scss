@@ -2,21 +2,37 @@
 
 .restaurantName{
     grid-row: 1 / 2;
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
 
     display: flex;
-    align-items: center;
-    justify-content: first baseline;
-
+    align-items: baseline;
+    
     padding-right: 24px;
 
     h2{
         flex-grow: 1;
         @include typography(shrikhand, title, normal, bigMenuTitleLH, dark-sm);
+
+    }
+
+    @include breakpoints(tablet){
+        justify-content: center;
+        gap: 24px;
+
+        padding-right: inherit;
+        
+        h2{
+            flex-grow: inherit;
+        }
     }
 }
 
-.btn{
-    grid-column: 2 / 3;
-    justify-self: center;
+.containerRestaurant{
+
+    .btn{
+        grid-column: 3 / 4;
+        justify-self: center;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
 }

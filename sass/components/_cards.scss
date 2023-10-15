@@ -69,23 +69,12 @@
             }
 
             svg {
-                z-index: 2;
                 position: absolute;
                 align-self: flex-end;
 
                 height: 24px;
 
                 cursor: pointer;
-
-                &>* {
-
-                    fill: none;
-                    stroke: black;
-
-                    &:hover {
-                        fill: purple;
-                    }
-                }
             }
 
 
@@ -113,7 +102,7 @@
 
 .cardsMenuList {
     grid-row: auto;
-    grid-column: 2/3;
+    grid-column: 3 / 4;
 
     display: flex;
     flex-flow: column;
@@ -153,29 +142,28 @@
             gap: 5px;
 
             padding: 13.5px 15px;
-            width: 100%;
+            max-width: 100%;
             box-sizing: border-box;
             box-shadow: 0px 4px 15px 0px #0000001A;
             border-radius: 15px;
-            min-width: 0;
             cursor: pointer;
 
             .dishDescription{
-                display: flex;
+                display: inline-grid;
                 flex-flow: column;
 
                 flex-grow: 1;
                 gap: 5px;
-                min-width: 0;
+                
                 .dishTitle{
-                    white-space: nowrap; /* Empêche le saut à la ligne du texte */
-                    overflow: hidden; /* Cache le texte qui déborde */
+                    white-space: nowrap;
+                    overflow: hidden;
                     text-overflow: ellipsis;
                     @include typography(roboto, medium, medium, largeTextLH, dark);
                 }
                 .dishInfo {
-                    white-space: nowrap; /* Empêche le saut à la ligne du texte */
-                    overflow: hidden; /* Cache le texte qui déborde */
+                    white-space: nowrap;
+                    overflow: hidden;
                     text-overflow: ellipsis;
                     @include typography(roboto, small, light, normalTextLH, dark);
                 }
@@ -183,15 +171,15 @@
 
             .dishPrice{
                 align-self: flex-end;
-                min-width: 0;
+
                 @include typography(roboto, small, bold, normalTextLH, grey);
             }
 
             &::after{
-                content: "\f058"; /* Utilisez le code Unicode de l'icône que vous souhaitez afficher */
-                font-family: 'Font Awesome 6 Free'; /* Nom de la famille de police de Font Awesome */
-                font-weight: 600; /* Poids de la police (en gras) */
-                font-size: 20px; /* Taille de la police */
+                content: "\f058"; 
+                font-family: 'Font Awesome 6 Free'; 
+                font-weight: 600; 
+                font-size: 20px; 
                 color: rgba(color(white), 0);
 
                 position: relative;
