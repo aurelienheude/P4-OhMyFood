@@ -5,6 +5,7 @@ header{
     flex-direction: column;
 
     background: color(white);
+
     p{
         display: flex;
         justify-content: center;
@@ -22,7 +23,14 @@ header{
     }
 
     .MenuBanner{
-        height: 252px;
+        max-height: 275px;
+        max-width: 100%;
+        object-fit: cover;
         background-position: center;
+        
+        @include breakpoints(tablet){
+            max-height: 383px;
+            z-index: 1;
+        }
     }
 }
