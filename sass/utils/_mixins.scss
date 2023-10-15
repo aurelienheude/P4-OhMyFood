@@ -8,6 +8,12 @@
     }
 }
 
+@mixin breakpointsMax($name){
+    @media only screen and (max-width: map-get($breakpoints, $name)) {
+        @content;
+    }
+}
+
 @mixin typography($fontF, $fontS, $fontW, $lineH, $colorT){
     font-family: map-get(fonts.$fontFamily, $fontF);
     font-size: map-get(fonts.$fontSize, $fontS);
