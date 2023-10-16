@@ -31,12 +31,13 @@
 
     @include breakpoints(tablet){
 
+        margin-top: inherit;
         padding: 0px 0px 40px 0px;
 
         grid-template-columns: minmax(17px, 1fr) minmax(17px, 211px) minmax(auto, 634px) minmax(17px, 211px) minmax(17px, 1fr);
 
         border-radius: inherit;
-        background: color(white);
+        background: none;
     &::before{
 
         grid-column: 2/5;
