@@ -14,13 +14,17 @@ body{
     position: relative;
     
 }
+h1, h2{
+    @include typography(roboto, smallTitle, bold, titleHomeLH, dark)
+}
 
 h1{
     text-align: center;
-}
 
-h1, h2{
-    @include typography(roboto, smallTitle, bold, titleHomeLH, dark)
+    @include breakpoints(desktop)
+    {
+        @include typography(roboto, bigTitle, bold, bigHomeTitleLH, dark);
+    }
 }
 
 a{

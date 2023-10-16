@@ -57,16 +57,25 @@ body {
   position: relative;
 }
 
-h1 {
-  text-align: center;
-}
-
 h1, h2 {
   font-family: "roboto";
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
   color: #000;
+}
+
+h1 {
+  text-align: center;
+}
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-family: "roboto";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 46px;
+    color: #000;
+  }
 }
 
 a {
@@ -582,6 +591,18 @@ header .MenuBanner {
   flex-direction: column;
   padding: 39px 0px 57px 0px;
 }
+.reservation::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  grid-column: 1/4;
+  grid-row: 1/2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
+}
 .reservation p {
   font-family: "roboto";
   font-size: 18px;
@@ -594,6 +615,11 @@ header .MenuBanner {
 }
 .reservation .btn {
   margin-top: 27px;
+}
+@media only screen and (min-width: 1024px) {
+  .reservation {
+    padding: 30px 0px;
+  }
 }
 
 .functioning {
@@ -660,6 +686,9 @@ header .MenuBanner {
   color: #FFFFFF;
 }
 @media only screen and (min-width: 1024px) {
+  .functioning {
+    padding: 50px 0px;
+  }
   .functioning ol {
     padding: 26px 27px 0px 12px;
   }
@@ -677,6 +706,18 @@ header .MenuBanner {
   gap: 26px;
   padding-top: 54px;
   padding-bottom: 66px;
+}
+.restaurant::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  grid-column: 1/4;
+  grid-row: 3/4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
 }
 @media only screen and (min-width: 1024px) {
   .restaurant {
