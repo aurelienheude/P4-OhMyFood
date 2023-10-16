@@ -10,6 +10,23 @@
 
     padding: 39px 0px 57px 0px;
 
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+
+        grid-column: 1 / 4;
+        grid-row: 1/2;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: map-get($color, white-sd);
+    }  
+
     p {
         @include typography(roboto, medium, light, largeTextLH, dark);
 
@@ -21,6 +38,10 @@
 
     .btn {
         margin-top: 27px;
+    }
+
+    @include breakpoints(desktop){
+        padding: 30px 0px;
     }
 }
 
@@ -107,6 +128,9 @@
     }
 
     @include breakpoints(desktop){
+
+        padding: 50px 0px;
+
         ol{
             padding: 26px 27px 0px 12px;
             li{
@@ -115,7 +139,6 @@
                 flex-grow: 1;
             }
         }
-
     }
 }
 
@@ -129,6 +152,23 @@
 
     padding-top: 54px;
     padding-bottom: 66px;
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+
+        grid-column: 1 / 4;
+        grid-row: 3/4;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: map-get($color, white-sd);
+    }  
 
     @include breakpoints(desktop)
     {
