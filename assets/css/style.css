@@ -23,8 +23,10 @@
   }
 }
 @keyframes loader {
+  0% {
+    display: block;
+  }
   20% {
-    display: initial;
     opacity: 1;
   }
   40% {
@@ -492,10 +494,12 @@ header .MenuBanner {
 .loader {
   z-index: 100;
   position: fixed;
+  display: none;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
   animation: loader 1s forwards;
+  -moz-animation: loader 1s forwards;
 }
 .loader__container {
   position: relative;

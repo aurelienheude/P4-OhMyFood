@@ -3,15 +3,15 @@
 .loader{
     z-index: 100;
     position: fixed;
-
+    display: none;
     width: 100vw;
     height: 100vh;
 
 
     background: linear-gradient(193deg, color(purple) -11.44%, color(pink) 123.93%);
 
-    animation: loader 1s forwards;
-
+    animation: loader 1s forwards;    
+    -moz-animation: loader 1s forwards; 
     &__container{
         position: relative;
 
