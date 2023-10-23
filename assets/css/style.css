@@ -23,27 +23,9 @@
   }
 }
 @keyframes loader {
-  0% {
-    display: block;
-  }
-  20% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  60% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
+  to {
+    visibility: hidden;
     display: none;
-    opacity: 0;
   }
 }
 * {
@@ -494,12 +476,10 @@ header .MenuBanner {
 .loader {
   z-index: 100;
   position: fixed;
-  display: none;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(193deg, #9356DC -11.44%, #FF79DA 123.93%);
   animation: loader 1s forwards;
-  -moz-animation: loader 1s forwards;
 }
 .loader__container {
   position: relative;

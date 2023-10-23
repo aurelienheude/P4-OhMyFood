@@ -27,27 +27,13 @@
 }
 
 @keyframes loader{
-    0%{
-        display: block;
+    from{
+        
     }
-    20%{
-        opacity: 1;
-    }
-    40%{
-        opacity: 1;
-    }
-    60%{
-        opacity: 1;
-    }
-    80%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 1;
-    }
-    100%{
+    to{
+        visibility: hidden;
         display: none;
-        opacity: 0;
+
     }
 }
 
