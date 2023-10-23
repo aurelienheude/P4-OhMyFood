@@ -1,0 +1,33 @@
+@use "../utils/" as *;
+
+nav{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0px 2px 4px 0px rgba(#000026, 0.15);
+
+    a{
+        position: absolute;
+        
+        display: flex;
+        align-items: center;
+
+        left: 23px;
+    }
+
+    img{
+        width: 162px;
+        max-height: 100%;
+
+        padding: 20px 0px 12px 0px;
+
+        @include breakpoints(desktop){
+            width: 200px;
+
+            padding: 30px 0px 32px 0px;
+        }
+    }
+}

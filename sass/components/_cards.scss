@@ -1,36 +1,54 @@
-@use "../utils/variables";
+@use "../utils"as *;
 
-.cards{
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
+.cards {
+    grid-column: 2/3;
+    grid-row: 2/3;
 
-    gap: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+
+    grid-row-gap: 18px;
 
     width: 100%;
 
-    .card{
-        box-sizing: border-box;
-        flex-basis: 100%;
-        max-width: 490px;
+    .card {
+        position: relative;
 
+        box-sizing: border-box;
         border-radius: 15px;
 
-        background: color("blue");
-        box-sizing: border-box;
+        background: color(white);
 
-        &__img{
+        &:nth-of-type(1)::before,
+        &:nth-of-type(2)::before {
+            content: "Nouveau";
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            margin-top: 13px;
+            margin-right: 12px;
+            padding: 7px 9.63px 6px 9px;
+
+            background: #99E2D0;
+            color: #008766;
+
+            @include typography(roboto, extraSmall, normal, smallTextLH, green);
+        }
+
+        &__img {
             width: 100%;
             height: 174px;
 
             object-fit: cover;
-            
+
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
         }
 
-        &__content{
-            
+        &__content {
+
             position: relative;
 
             display: flex;
@@ -39,59 +57,166 @@
             flex-direction: column;
 
             gap: 5px;
-            
+
             padding: 16px 25px 16px 13px;
 
-            a{
-                color: $dark;
-                font-family: Roboto;
-                font-size: 18px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
+            span {
+                @include typography(roboto, medium, bold, largeTextLH, dark);
             }
 
-            p{
-                color: $dark;
-                font-family: Roboto;
-                font-size: 17px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: normal;
+            p {
+                @include typography(roboto, extraNormal, light, extraMediumTextLH, dark);
             }
 
-            svg{
+            svg {
                 position: absolute;
                 align-self: flex-end;
 
                 height: 24px;
 
                 cursor: pointer;
+            }
 
-                & > *{
-                    
-                    fill: none;
-                    stroke: $dark;
 
-                    &:hover{
-                        fill: $purple;
-                    }
+        }
+
+        &:hover span {
+            text-decoration: underline;
+        }
+    }
+
+    @include breakpoints(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 25px;
+        grid-column-gap: 50px;
+    }
+
+    @include breakpoints(desktop) {
+
+        grid-row: 2/3;
+
+        grid-row-gap: 50px;
+        grid-column-gap: 100px;
+    }
+}
+
+.cardsMenuList {
+    grid-row: auto;
+    grid-column: 3 / 4;
+
+    display: flex;
+    flex-flow: column;
+
+    gap: 12px;
+
+    @include cardsMenuAnimation;
+
+    &__title {
+        position: relative;
+        height: 27px;
+
+        @include typography(roboto, normal, light, mediumTextLH, dark);
+
+        text-transform: uppercase;
+
+        &::before {
+            content: "";
+            position: absolute;
+
+            bottom: 0;
+            left: 0;
+
+            width: 40px;
+            height: 3px;
+
+            background: color(greenLight);
+        }
+
+        animation: animationFade 0.3s backwards;
+    }
+
+    &__content {
+        display: flex;
+        flex-flow: column;
+        gap: 12px;
+
+        li {
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            gap: 5px;
+
+            padding: 13.5px 15px;
+            max-width: 100%;
+
+            box-sizing: border-box;
+
+            box-shadow: 0px 4px 15px 0px #0000001A;
+            border-radius: 15px;
+            background: color(white);
+            cursor: pointer;
+
+            animation: animationFade 0.3s backwards;
+
+            .dishDescription{
+                display: inline-grid;
+                flex-flow: column;
+
+                flex-grow: 1;
+                gap: 5px;
+                
+                .dishTitle{
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include typography(roboto, medium, medium, largeTextLH, dark);
+                }
+                .dishInfo {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    @include typography(roboto, small, light, normalTextLH, dark);
                 }
             }
 
-            
-        }
+            .dishPrice{
+                align-self: flex-end;
 
-        @include breakpoints(mobile){
-    
-        }
-    
-        @include breakpoints(tablet){
-        
-        }
-    
-        @include breakpoints(desktop){
-            
+                @include typography(roboto, small, bold, normalTextLH, grey);
+            }
+
+            &::after{
+                content: "\f058"; 
+                font-family: 'Font Awesome 6 Free'; 
+                font-weight: 600; 
+                font-size: 20px; 
+                color: rgba(color(white), 0);
+
+                position: relative;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                overflow: hidden;
+
+                right: -15px;
+                top: -13.5px;
+
+                height: calc(100% + 27px);
+                width: 0px;
+
+                background: color(greenLight); 
+                
+                border-top-right-radius: 15px;
+                border-bottom-right-radius: 15px;
+
+                transition: width 600ms ease, border-bottom-right-radius 100ms ease, color 500ms;
+            }
+            &:hover::after{
+                width: 59px;
+                color: rgba(color(white), 1);
+            }
         }
     }
 }

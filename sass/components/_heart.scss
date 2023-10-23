@@ -1,0 +1,36 @@
+.heart {
+
+    stroke: none;
+    stroke-width: 1px;
+    
+    cursor: pointer;
+    
+    path{
+        fill-opacity: 1;
+        transition: fill-opacity 400ms ease;
+    }
+    
+    &:hover{
+        stroke: #000;
+        path{
+            fill-opacity: 0;
+        }
+    }
+    
+    &--inactive{
+        stroke: #000;
+        stroke-width: 1px;
+
+        cursor: pointer;
+
+            path{
+                fill-opacity: 0;
+                transition: fill-opacity 400ms ease;
+            }
+
+            :hover{
+                stroke-width: 0px;
+                fill-opacity: 1;
+            }
+        }
+}

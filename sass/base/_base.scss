@@ -1,0 +1,41 @@
+@use "../utils" as *;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    position: relative;
+    
+}
+h1, h2{
+    @include typography(roboto, smallTitle, bold, titleHomeLH, dark)
+}
+
+h1{
+    text-align: center;
+
+    @include breakpoints(desktop)
+    {
+        @include typography(roboto, bigTitle, bold, bigHomeTitleLH, dark);
+    }
+}
+
+a{
+    color: color(white);
+    text-decoration: none;
+
+    :visited{
+        text-decoration: none;
+    }
+}
+
+li{
+    list-style: none;
+}

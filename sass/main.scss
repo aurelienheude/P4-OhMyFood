@@ -1,28 +1,5 @@
-@import "base/typography";
+@use "base/base";
 
-@import "utils/placeholder";
-@import "utils/variables";
-@import "utils/mixins";
-
-@import "components/buttons";
-@import "components/cards";
-@import "components/navigation";
-
-@import "layout/footer";
-@import "layout/header";
-@import "layout/ordermenu";
-@import "layout/loader";
-
-@import "pages/home";
-@import "pages/restaurants";
-
-::-webkit-scrollbar{
-    display: none;
-}
-
-body{ 
-    margin: 0px; 
-    padding: 0px; 
-
-    background: $white-sd;
-}
+@use "components";
+@use "layout";
+@use "pages";

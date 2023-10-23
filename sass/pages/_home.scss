@@ -1,40 +1,75 @@
+@use "../utils" as *;
+
 .reservation {
+    grid-column: 2/3;
+    
     display: flex;
     align-items: center;
 
     flex-direction: column;
 
-    padding: 39px 17px 57px 17px;
+    padding: 39px 0px 57px 0px;
 
-    h1 {
-        text-align: center;
-    }
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+
+        grid-column: 1 / 4;
+        grid-row: 1/2;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: map-get($color, white-sd);
+    }  
 
     p {
-        margin-top: 17px;
+        @include typography(roboto, medium, light, largeTextLH, dark);
 
-        font-family: Roboto;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 21px;
-        letter-spacing: 0em;
+        margin-top: 17px;
         text-align: center;
 
+        color: color(grey);
     }
 
     .btn {
         margin-top: 27px;
     }
+
+    @include breakpoints(desktop){
+        padding: 30px 0px;
+    }
 }
 
 .functioning {
-    padding: 48px 17px 68px 17px;
+    grid-column: 2/3;
 
-    background: $white;
+    padding: 48px 0px 68px 0px;
 
+    background: map-get($color, white);
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+
+        grid-column: 1 / 4;
+        grid-row: 2/3;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: map-get($color, white);
+    }  
     ol {
         display: flex;
-        justify-content: stretch;
         align-items: flex-start;
         flex-flow: row wrap;
 
@@ -44,39 +79,36 @@
         padding: 26px 0px 0px 12px;
 
         list-style: none;
+        
         counter-reset: li;
 
         li {
             position: relative;
 
             display: flex;
-            justify-content: center;
-            align-items: baseline;
-
-            gap: 27px;
+            align-items: center;
+            
+            gap: 20px;
 
             flex-basis: 100%;
 
             margin: 0;
-            padding: 29px 38px 28px 33px;
+            padding: 29px 38px 28px 37.5px;
 
+            background: color(white-sd); 
             box-shadow: 0px 4px 15px 0px #00000026;
             border-radius: 20px;
 
-
-            color: #000;
-            font-family: Roboto;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: normal;
+            @include typography(roboto, normal, medium, mediumTextLH,dark);
 
             &::before{
                 counter-increment: li;
                 content: counters(li, ".") "";
 
                 position: absolute;
+
                 left: -12px;
+
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -85,43 +117,64 @@
                 width: 24px;
 
                 border-radius: 100%;
-                background: $purple;
-                color: $white;
+
+                @include typography(roboto, extraSmall, medium, smallTextLH, white);
+
+                background: color(purple);
+                color: color(white);
             }
         }
     }
 
-    @include breakpoints(mobile){
-    
-    }
-    
-    @include breakpoints(tablet){
-        padding: 60px 180px 50px 180px;
-    }
-
     @include breakpoints(desktop){
 
+        padding: 50px 0px;
+
+        ol{
+            padding: 26px 27px 0px 12px;
+            li{
+                padding: 29px 38px 28px 33.5px;
+                flex-basis: 21.1433%;
+                flex-grow: 1;
+            }
+        }
     }
 }
 
 .restaurant{
-    padding: 54px 17px 66px 17px;
+    grid-column: 2/3;
 
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
+    flex-flow: column;
+    
     gap: 26px;
 
-    @include breakpoints(mobile){
-    
-    }
+    padding-top: 54px;
+    padding-bottom: 66px;
 
-    @include breakpoints(tablet){
-        padding: 30px 180px;
-    }
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
 
-    @include breakpoints(desktop){
+        grid-column: 1 / 4;
+        grid-row: 3/4;
+
+        left: 0;
+        top: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: map-get($color, white-sd);
+    }  
+
+    @include breakpoints(desktop)
+    {
+        padding: 30px 0px;
         
+        h2{
+            grid-column: 2/3;
+        }
     }
 }

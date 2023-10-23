@@ -1,14 +1,14 @@
+@use "../utils/" as *;
+
 footer{
     display: flex;
-    align-items: flex-start;
     flex-flow: column;
 
     gap: 16px;
 
     padding: 25px 22px 22px 25px;
 
-    background: $grey;
-    color: $white;
+    background: color(grey);
 
     ul{
         display: flex;
@@ -27,12 +27,8 @@ footer{
             align-items: baseline;
 
             gap: 17px;
-
-            font-family: Roboto;
-            font-size: 16px;
-            font-weight: 500;
-            line-height: 19px;
-            letter-spacing: 0em;
+            
+            @include typography(roboto, normal, medium, mediumTextLH, white);
 
             &:nth-child(n + 3){
                 font-weight: 400;
@@ -40,29 +36,39 @@ footer{
         }
     }
 
-    @include breakpoints(mobile){
-
-    }
-
-    /*@include breakpoints(tablet){
-        flex-flow: row-reverse;
-        justify-content: baseline;
+    @include breakpoints(tablet){
         align-items: center;
 
-        gap: 90px;
-        
-        padding: 64px 50px 30px 0px;
+        padding: 25px 22px;
 
-        ul {
-            flex-direction: row;
+        ul li{
+            justify-content: center;
+        }
+    };
+
+    @include breakpoints(desktop)
+    {
+        flex-flow: row-reverse;
+        align-items: baseline;
+        padding: 62px 90px 30px 0px;
+        
+        gap: 90px;
+
+        ul{
+            flex-flow: row;
 
             li{
-                gap: 11px;
+
+                gap: 10px;
+                
+                &:nth-of-type(2){
+                    padding-right: 45px;
+                }
+
+                &:nth-of-type(3){
+                    padding-right: 10px;
+                }
             }
         }
-    }*/
-
-    @include breakpoints(desktop){
-
     }
 }

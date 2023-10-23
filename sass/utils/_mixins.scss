@@ -1,11 +1,29 @@
+@use "fonts";
+@use "colors";
+@use "breakpoints" as *;
+
 @mixin breakpoints($name) {
     @media only screen and (min-width: map-get($breakpoints, $name)) {
         @content;
     }
 }
 
-@mixin font($family, $weight, $size, $line-height) {
-    font-family: $family;
-    font-weight: $weight;
-    @include font-size($size, $line-height);
+@mixin breakpointsMax($name){
+    @media only screen and (max-width: map-get($breakpoints, $name)) {
+        @content;
+    }
+}
+
+@mixin typography($fontF, $fontS, $fontW, $lineH, $colorT){
+    font-family: map-get(fonts.$fontFamily, $fontF);
+    font-size: map-get(fonts.$fontSize, $fontS);
+    font-weight: map-get(fonts.$fontWeight, $fontW);
+    
+    line-height: map-get(fonts.$lineHeight, $lineH);
+    
+    @if (fonts.$fontFamily == "Shrikhand"){
+        font-style: italic;
+    }
+
+    color: map-get(colors.$color, $colorT);
 }
